@@ -28,7 +28,8 @@ main {
 }
 
 .main {
-  background: linear-gradient(#333, #fff);
+  background: #333;
+  color: white;
 }
 
 .footer {
