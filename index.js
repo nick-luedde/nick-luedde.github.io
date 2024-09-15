@@ -1,3 +1,3 @@
 setTimeout(() => {
-  document.querySelector('main').appendChild('Hah, js works too!');
+  document.querySelector('main').append('Hah, js works too!');
 }, 3500);
