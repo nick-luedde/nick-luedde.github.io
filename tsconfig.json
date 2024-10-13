@@ -1,0 +1,18 @@
+{
+  "include": ["app.js", "js/**/*", "pages/**/*", "components/**/*", "env.d.ts"],
+  "exclude": [],
+  "compilerOptions": {
+    "checkJs": true,
+    "lib": ["ESNext", "DOM"],
+    "allowJs": true,
+    "composite": true,
+    "module": "ESNext",
+    "noEmit": true,
+    "strict": true,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "."
+  }
+}

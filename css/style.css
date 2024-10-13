@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+}
+
+html {
+  display: grid;
+  min-height: 100%;
+  font-family: "Source Code Pro", system-ui;
+}
