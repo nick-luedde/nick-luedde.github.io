@@ -1,6 +1,7 @@
 import { attach } from "./utils.js";
 import { Bio } from "../pages/bio.js";
 import { Projects } from "../pages/projects.js";
+import { Asv } from "../components/projects/asv.js";
 
 const notFound = () => {
 
@@ -22,6 +23,8 @@ export const routes = (function() {
   map.set('#bio', Bio);
   map.set('#projects', Projects);
 
+  map.set('#project/asv', Asv);
+
   return map;
 })();
 
@@ -36,7 +39,6 @@ const goToHash = (hash) => {
     pageRoot.innerHTML = '';
     const page = fn();
     page.attach(pageRoot);
-    window.history.pushState(null, '', window.location.href);
   }
 };
 

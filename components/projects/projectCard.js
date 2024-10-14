@@ -17,11 +17,11 @@ export const ProjectCard = (props) => {
     </div>
   `;
 
-  const root = document.createElement('article');
+  const root = document.createElement('a');
   root.innerHTML = template;
 
-  root.className = 'flex items-center rounded-xl bg-slate-700 p-2 my-8';
-  root.tabIndex = 0;
+root.className = 'flex items-center rounded-xl bg-slate-700 p-2 my-8 outline-2 hover:outline hover:outline-blue-500 focus:outline focus:outline-blue-500';
+  root.href = props.detail.hash;
 
   const img = root.querySelector('img');
   if (img)
@@ -29,8 +29,6 @@ export const ProjectCard = (props) => {
 
   //@ts-ignore
   const [title, blurb] = [...root.querySelectorAll('p')];
-
-  root.addEventListener('click', () => navigate(props.detail.hash));
 
   const render = () => {
     title.textContent = props.detail.name;

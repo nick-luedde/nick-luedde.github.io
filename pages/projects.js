@@ -5,7 +5,6 @@ import { ProjectCard } from '../components/projects/projectCard.js';
 export const Projects = () => {
 
   const template = `
-    <h1>Projects</h1>
     <ul class="flex flex-wrap">
     </ul>
   `;

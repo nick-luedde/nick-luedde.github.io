@@ -8,14 +8,14 @@ export const projects = [
   },
   {
     name: 'AppsServer',
-    img: '',
+    img: './assets/appsserver_thumbnail.png',
     blurb: 'Lightweight Google Apps Script/JavaScript library modelled on Express.',
     hash: '#project/appsserver'
   },
   {
     name: 'DocumentImportProcess',
-    img: '',
+    img: './assets/dip_thumbnail.png',
     blurb: 'C# .NET console application that transforms a directory of files into a .zip package for import into a document repository.',
     hash: '#project/dip'
   },
-]
+];

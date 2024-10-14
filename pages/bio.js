@@ -28,20 +28,12 @@ export const Bio = () => {
         Check out my project library...
       </a>
     </p>
-
-    <hr class="w-2/4 m-auto my-8" />
-
-    <p>
-      Tools I'm getting used to so far:
-      <br />
-      Vue.js, Bulma.css
-    </p>
   `;
 
   const root = document.createElement('section');
   root.innerHTML = template;
 
-  root.className = 'container m-auto';
+  root.className = 'container max-w-screen-lg m-auto p-2';
  
   const pic = root.querySelector('#pic');
   if (pic) {
