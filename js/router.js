@@ -16,15 +16,13 @@ const notFound = () => {
 const pageRoot = document.querySelector('#app');
 
 export const routes = (function() {
-  const bio = Bio();
-  const projects = Projects();
-
-  /** @type {Map<string, AppPage>} */
+  
+  /** @type {Map<string, () => AppPage>} */
   const map = new Map();
-  map.set('#bio', bio);
-  map.set('#projects', projects);
+  map.set('#bio', Bio);
+  map.set('#projects', Projects);
 
-  return map
+  return map;
 })();
 
 /**
@@ -32,10 +30,11 @@ export const routes = (function() {
  */
 const goToHash = (hash) => {
 
-  const page = routes.get(hash) || notFound();
+  const fn = routes.get(hash) || notFound;
   
-  if (page && pageRoot) {
+  if (fn && pageRoot) {
     pageRoot.innerHTML = '';
+    const page = fn();
     page.attach(pageRoot);
     window.history.pushState(null, '', window.location.href);
   }
@@ -55,7 +54,5 @@ export const navigate = (hash) => {
 
 export const listen = () => window.addEventListener('hashchange', e => {
   const hash = window.location.hash;
-  console.log('hashchange:event', e); //DEBUG
-  console.log('hash', hash); //DEBUG
   goToHash(hash);
 });

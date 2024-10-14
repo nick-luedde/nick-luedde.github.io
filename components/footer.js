@@ -3,7 +3,7 @@ import { attach } from "../js/utils.js";
 export const Footer = () => {
 
   const template = `
-    <p>Footer</p>
+    <p class="text-center">Built by me, with help from Tailwind.css</p>
   `;
 
   const root = document.createElement('article');
@@ -16,5 +16,4 @@ export const Footer = () => {
     attach: attach(root),
     render
   };
-
 };
