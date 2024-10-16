@@ -16,7 +16,7 @@ export const Bio = () => {
       My background is in Economics, though I'm not sure I was ever particularly good at it!
       But I was pretty good at data modeling, enjoy math and reasoning, and started applying myself to learning SQL.
       From there I got into VBA, which led to my current job. I've had the opportunity to really expand the programming tools I work with,
-      which led to Web Developement and some work with C# on desktop apps.
+      which led to Web Developement and C# .NET desktop apps.
       <br>
       And that leads us to now, where I want to show off some of the fun stuff I've built and worked with along the way!
     </p>

@@ -20,8 +20,14 @@ export const Projects = () => {
     if (!ul) return;
     ul.innerHTML = '';
     const cards = projects.map(detail => ProjectCard({ detail }));
-    cards.forEach(card => {
+    cards.forEach((card, i) => {
       const li = document.createElement('li');
+      li.className = 'w-1/2 h-80 transition-opacity duration-1000 opacity-0 p-3';
+
+      setTimeout(() => {
+        li.classList.remove('opacity-0');
+        li.classList.add('opacity-1');
+      }, (i + 1) * 250);
       card.attach(li);
       card.render();
       ul?.appendChild(li);

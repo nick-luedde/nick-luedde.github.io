@@ -1,11 +1,12 @@
 import { attach } from "../../js/utils.js";
 
-export const AppsServer = () => {
+export const DIP = () => {
 
   const template = `
     <p>
-      Apps started getting bigger.
-      Always liked how Express (and other libraries like it) apps looked and felt, and wanted to have a tool that let me do some similar things.
+      Co-worker had a bit of a process for manually compiling a folder full of documents into a spreadsheet of metadata and a .zip directory.
+      It was all mapped out in their step-by-step guide document, took the oportunity to translate those steps into a cool little C# Console Application
+      to automate some of the tedium! 
     </p>
 
     <hr class="w-2/4 m-auto my-8" />

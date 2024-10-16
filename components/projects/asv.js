@@ -47,7 +47,7 @@ const errors = schema.validate({
   const root = document.createElement('section');
   root.innerHTML = template;
 
-  root.className = 'container max-w-screen-lg m-auto p-2';
+  root.className = 'container max-w-screen-lg m-auto p-2 mt-4';
 
   const valid = root.querySelector('#valid');
   const validResult = root.querySelector('#valid-result');

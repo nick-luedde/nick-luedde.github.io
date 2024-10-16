@@ -2,10 +2,13 @@ import { attach } from "./utils.js";
 import { Bio } from "../pages/bio.js";
 import { Projects } from "../pages/projects.js";
 import { Asv } from "../components/projects/asv.js";
+import { AppsServer } from "../components/projects/appsserver.js";
+import { DIP } from "../components/projects/dip.js";
 
 const notFound = () => {
 
   const root = document.createElement('section');
+  root.className = 'container max-w-screen-lg text-center m-auto p-2';
   root.textContent = 'Not found!';
 
   return {
@@ -24,6 +27,8 @@ export const routes = (function() {
   map.set('#projects', Projects);
 
   map.set('#project/asv', Asv);
+  map.set('#project/appsserver', AppsServer);
+  map.set('#project/dip', DIP);
 
   return map;
 })();
