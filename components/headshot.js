@@ -6,7 +6,7 @@ import { attach } from "../js/utils.js";
 export const Headshot = (props) => {
 
   const template = `
-    <img class="rounded-full transition-opacity delay-150 duration-1000 opacity-0" src="./assets/headshot.jpg" alt="My headshot, I look great!"/>
+    <img class="rounded-full transition-opacity duration-1000 opacity-0" src="./assets/headshot.jpg" alt="My headshot, I look great!"/>
   `;
 
   const root = document.createElement('figure');
