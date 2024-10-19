@@ -20,16 +20,17 @@ export const ProjectCard = (props) => {
   const template = `
     <div>
       <p>
-        <span class="text-blue-400">class</span> <span id="p-title" class="text-green-400"></span> <span class="text-gray-200">{}</span>
+        <span class="text-blue-400">project</span> <span id="p-title" class="text-green-400"></span> <span class="text-gray-200">{</span>
       </p>
-      <p></p>
+      <p class="pl-4 my-2 border-l border-l-gray-600"></p>
+      <span class="text-gray-200">}</span>
     </div>
   `;
 
   const root = document.createElement('a');
   root.innerHTML = template;
 
-  root.className = 'w-full h-full flex items-center rounded-xl p-2 my-8 outline-2 hover:outline hover:outline-blue-500 focus:outline focus:outline-blue-500';
+  root.className = 'w-full h-full flex rounded-xl p-2 my-8 outline-2 hover:outline hover:outline-blue-500 focus:outline focus:outline-blue-500';
   root.href = props.detail.hash;
   
   const img = root.querySelector('img');
