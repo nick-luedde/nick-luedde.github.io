@@ -30,13 +30,13 @@ export const Asv = () => {
   tags: [<span class="text-red-300">'awesome'</span>, <span class="text-red-300">'rad'</span>],
   rating: 10
 });
-<span class="text-green-700">// Run the valid results to see the schema output</span>
+<span class="text-green-600">// Run the valid results to see the schema output</span>
 
 <span class="text-blue-400">const</span> <span class="text-blue-200">errors</span> = <span class="text-blue-200">schema</span>.<span class="text-yellow-200">validate</span>({
   tags: [1],
   rating: <span class="text-red-300">'Not a number...'</span>
 });
-<span class="text-green-700">// Run the invalid results to see the schema output</span>
+<span class="text-green-600">// Run the invalid results to see the schema output</span>
       </p>
 
       <article class="flex-1 rounded-xl bg-black border border-white">

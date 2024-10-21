@@ -4,15 +4,16 @@ export const Bio = () => {
 
   const template = `
 
-    <div id="pic" class="pt-6 flex items-center transition-opacity duration-1000 opacity-0">
-      <p>
+    <div id="pic" class="mt-6 flex flex-col-reverse md:flex-row items-center transition-opacity duration-1000 opacity-0">
+      
+      <p class="mt-2 md:m-0">
         Hey, I'm Nick, and I'm a developer working with JavaScript, HTML, CSS, SQL, and some C# here and there.
       </p>
-      <div>
-        <figure class="w-36 h-36">
-          <img class="rounded-full" src="./assets/headshot.jpg" alt="My headshot, I look great!"/>
-        </figure>
-      </div>
+      
+      <figure class="flex-none w-36 h-auto md:w-auto md:h-80">
+        <img class="rounded-full h-auto md:w-auto md:h-80" src="./assets/headshot.jpg" alt="My headshot, I look great!"/>
+      </figure>
+      
     </div>
 
     <div id="blurb" class="transition-opacity duration-1000 opacity-0">
@@ -22,7 +23,7 @@ export const Bio = () => {
       <p>
         My background is in Economics, though I'm not sure I was ever particularly good at it!
         But I was pretty good at data modeling, enjoy math and reasoning, and started applying myself to learning SQL.
-        From there I got into VBA, and found out I really enjoy programming. In the years since, I've had the opportunity to really expand the programming tools I work with,
+        From there I got into VBA, and found out I really love programming. In the years since, I've had the opportunity to really expand the programming tools I work with,
         which led to Web Developement and C# .NET desktop apps.
         <br>
         And that leads us to now, where I want to show off some of the fun stuff I've built and worked with along the way!

@@ -2,8 +2,9 @@ import { attach } from "./utils.js";
 import { Bio } from "../pages/bio.js";
 import { Projects } from "../pages/projects.js";
 import { Asv } from "../components/projects/asv.js";
-import { AppsServer } from "../components/projects/appsserver.js";
+import { AppsServerProject } from "../components/projects/appsserver.js";
 import { DIP } from "../components/projects/dip.js";
+import { Contact } from "../pages/contact.js";
 
 const notFound = () => {
 
@@ -25,9 +26,10 @@ export const routes = (function() {
   const map = new Map();
   map.set('#bio', Bio);
   map.set('#projects', Projects);
+  map.set('#contact', Contact);
 
   map.set('#project/asv', Asv);
-  map.set('#project/appsserver', AppsServer);
+  map.set('#project/appsserver', AppsServerProject);
   map.set('#project/dip', DIP);
 
   return map;
