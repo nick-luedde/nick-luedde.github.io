@@ -1,10 +1,11 @@
 import { attach } from "./utils.js";
 import { Bio } from "../pages/bio.js";
 import { Projects } from "../pages/projects.js";
+import { Contact } from "../pages/contact.js";
 import { Asv } from "../components/projects/asv.js";
 import { AppsServerProject } from "../components/projects/appsserver.js";
 import { DIP } from "../components/projects/dip.js";
-import { Contact } from "../pages/contact.js";
+import { Sda } from "../components/projects/sda.js";
 
 const notFound = () => {
 
@@ -31,6 +32,7 @@ export const routes = (function() {
   map.set('#project/asv', Asv);
   map.set('#project/appsserver', AppsServerProject);
   map.set('#project/dip', DIP);
+  map.set('#project/sda', Sda);
 
   return map;
 })();
