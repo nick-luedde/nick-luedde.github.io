@@ -17,7 +17,7 @@ export const Asv = () => {
     </p>
 
     <div class="flex flex-col md:flex-row gap-3">
-      <p class="flex-1 whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
+      <p class="flex-1 break-all whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
 <span class="text-blue-400">const</span> <span class="text-blue-200">asv</span> = <span class="text-green-400">AppsSchemaValidation</span>.<span class="text-yellow-200">asv</span>();
 
 <span class="text-blue-400">const</span> <span class="text-blue-200">schema</span> = <span class="text-blue-200">asv</span>.<span class="text-yellow-200">build</span>({

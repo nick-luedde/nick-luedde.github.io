@@ -16,12 +16,12 @@ export const DIP = () => {
       Here's a bit of what it looks like in action...
     </p>
 
-      <div class="bg-black border rounded-xl border-white">
-        <div class="flex">
-            <button id="reset" class="flex-1 rounded-t-xl bg-blue-600 text-white p-2">Reset</button>
-        </div>
-        <p class="whitespace-pre-wrap p-3"><span id="entry"></span><span class="animate-pulse">|</span></p>
+    <div class="bg-black border rounded-xl border-white">
+      <div class="flex">
+          <button id="reset" class="flex-1 rounded-t-xl bg-blue-600 text-white p-2">Reset</button>
       </div>
+      <p class="break-all whitespace-pre-wrap p-3"><span id="entry"></span><span class="animate-pulse">|</span></p>
+    </div>
     
   `;
 
@@ -78,6 +78,7 @@ export const DIP = () => {
     }
   };
 
+  //TODO: reset doesn't stop the current on if its already in progress
   if (reset)
     reset.addEventListener('click', loop);
 

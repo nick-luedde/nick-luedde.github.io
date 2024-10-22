@@ -17,7 +17,7 @@ export const AppsServerProject = () => {
     </p>
 
     <div class="flex flex-col md:flex-row gap-3">
-      <p class="flex-1 whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
+      <p class="flex-1 break-all whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
 <span class="text-blue-400">const</span> <span class="text-blue-200">server</span> = <span class="text-green-400">AppsServer</span>.<span class="text-yellow-200">create</span>();
 
 <span class="text-blue-200">server</span>.<span class="text-yellow-200">use</span>(<span class="text-red-300">'/.*'</span>, (<span class="text-blue-200">req</span>, <span class="text-blue-200">res</span>, <span class="text-blue-200">next</span>) => {

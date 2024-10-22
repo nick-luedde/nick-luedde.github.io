@@ -5,7 +5,7 @@ import { ProjectCard } from '../components/projects/projectCard.js';
 export const Projects = () => {
 
   const template = `
-    <ul class="flex flex-wrap">
+    <ul class="md:flex md:flex-wrap">
     </ul>
   `;
 
@@ -22,7 +22,7 @@ export const Projects = () => {
     const cards = projects.map(detail => ProjectCard({ detail }));
     cards.forEach((card, i) => {
       const li = document.createElement('li');
-      li.className = 'w-1/2 h-60 transition-opacity duration-1000 opacity-0 p-3';
+      li.className = 'md:w-1/2 md:h-60 transition-opacity duration-1000 opacity-0 p-3';
 
       setTimeout(() => {
         li.classList.remove('opacity-0');

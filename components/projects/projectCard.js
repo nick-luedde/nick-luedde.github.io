@@ -32,10 +32,6 @@ export const ProjectCard = (props) => {
 
   root.className = 'w-full h-full flex rounded-xl p-2 my-8 outline-2 hover:outline hover:outline-blue-500 focus:outline focus:outline-blue-500';
   root.href = props.detail.hash;
-  
-  const img = root.querySelector('img');
-  if (img)
-    img.src = props.detail.img;
 
   const title = root.querySelector('#p-title');
   

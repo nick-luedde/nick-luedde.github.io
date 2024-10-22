@@ -17,7 +17,7 @@ export const Sda = () => {
     </p>
 
     <div class="flex flex-col md:flex-row gap-3">
-      <p class="flex-1 whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
+      <p class="flex-1 break-all whitespace-pre-wrap p-3 bg-black border rounded-xl border-white">
 <span class="text-blue-400">const</span> <span class="text-blue-200">ds</span> = <span class="text-blue-400">new</span> <span class="text-green-400">SheetDataAccess</span>({ id: <span class="text-red-300">'your-sheet-id'</span> });
 
 <span class="text-blue-400">const</span> <span class="text-blue-200">tasks</span> = <span class="text-blue-200">ds</span>.<span class="text-blue-200">collections</span>.<span class="text-green-400">Task</span>.<span class="text-yellow-200">data</span>();
@@ -35,7 +35,7 @@ export const Sda = () => {
 </p>
 
       <article class="flex-1 rounded-xl bg-black border border-white">
-        <p id="result" class="whitespace-pre-wrap p-3 rounded-b-xl transition-colors duration-700">
+        <p id="result" class="break-all whitespace-pre-wrap p-3 rounded-b-xl transition-colors duration-700">
 // This assumes you have a Google Sheet with the following structure...
 
 Tab name:
