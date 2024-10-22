@@ -12,7 +12,7 @@ export const Contact = () => {
 
       <div class="flex items-center justify-center gap-2">
         <figure class="inline-block">
-          <img src="./assets/Li-In-Bug.png" alt="LinkedIn" class="w-auto h-8"/>
+          <img src="./assets/LI-In-Bug.png" alt="LinkedIn" class="w-auto h-8"/>
         </figure>
         <a href="https://www.linkedin.com/in/nicholas-luedde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
