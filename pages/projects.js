@@ -27,7 +27,7 @@ export const Projects = () => {
       setTimeout(() => {
         li.classList.remove('opacity-0');
         li.classList.add('opacity-1');
-      }, (i + 1) * 250);
+      }, (i + 1) * 150);
       card.attach(li);
       card.render();
       ul?.appendChild(li);

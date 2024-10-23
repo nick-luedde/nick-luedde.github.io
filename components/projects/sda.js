@@ -6,7 +6,7 @@ export const Sda = () => {
   const template = `
     <h1 class="text-green-400 text-xl mb-4">SheetDataAccess</h1>
     <p>
-      Working on the Google Apps Script platform, Google Sheets was a cheap and easy, and mostly effective choice as a backend data source for small apps.
+      Working on the Google Apps Script platform, Google Sheets was a cheap, easy, and mostly effective choice as a backend data source for small apps.
       Wrote the SheetDataAccess class to help make the CRUD operations a bit easier/friendly to achieve.
     </p>
 
