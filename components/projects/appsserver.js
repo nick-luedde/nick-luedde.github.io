@@ -71,8 +71,13 @@ export const AppsServerProject = () => {
   const root = document.createElement('section');
   root.innerHTML = template;
 
-  root.className = 'container max-w-screen-lg m-auto p-2 mt-4';
+  root.className = 'container max-w-screen-lg m-auto p-2 mt-4 transition-opacity duration-1000 opacity-0';
 
+  setTimeout(() => {
+    root.classList.remove('opacity-0');
+    root.classList.add('opacity-1');
+  }, 150);
+  
   const tasks = root.querySelector('#tasks');
   const save = root.querySelector('#save');
   const result = root.querySelector('#result');

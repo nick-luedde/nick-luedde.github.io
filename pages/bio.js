@@ -28,13 +28,19 @@ export const Bio = () => {
         <br>
         And that leads us to now, where I want to show off some of the fun stuff I've built and worked with along the way!
       </p>
-
+      
       <hr class="w-2/4 m-auto my-8" />
 
       <p>
-        <a href="#projects" class="outline-none hover:underline focus:underline">
-          Check out my some of my projects...
-        </a>
+        //TODO: good list of skills that looks cool too
+        <h2>Some skills I've picked up along the way...</h2>
+        <ul>
+          <li>Vue.js</li>
+          <li>BULMA.css</li>
+          <li>Accessibile design</li>
+          <li>Responsive design</li>
+          <li>Design patterns <!-- (some of my favorite stuff, though I still get it wrong!) --></li>
+        </ul>
       </p>
     </div>
   `;
