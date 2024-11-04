@@ -1,9 +1,9 @@
 /** @type {ProjectCardDetail[]} */
 export const projects = [
   {
-    name: 'AppsSchemaValidation',
-    blurb: 'Google Apps Script/JavaScript library for applying a schema to data objects. Most helpful when using Google Sheets as a cheap and easy backend for Apps Script apps :)',
-    hash: '#project/asv'
+    name: 'ProjectsTrackingApp',
+    blurb: 'Project tracking app that brings together a lot of the little elements I\'ve worked on. Inspired by DevOps and other apps like it.',
+    hash: '#project/ipt'
   },
   {
     name: 'AppsServer',
@@ -11,13 +11,18 @@ export const projects = [
     hash: '#project/appsserver'
   },
   {
-    name: 'DocumentImportProcess',
-    blurb: 'C# .NET console application that transforms a directory of files into a .zip package for import into a document repository.',
-    hash: '#project/dip'
+    name: 'AppsSchemaValidation',
+    blurb: 'Google Apps Script/JavaScript library for applying a schema to data objects. Most helpful when using Google Sheets as a cheap and easy backend for Apps Script apps :)',
+    hash: '#project/asv'
   },
   {
     name: 'SheetDataAccess',
     blurb: 'CRUD operations (and more) for Google Apps Script apps using a Google Sheet as a data source. (Sometimes spreadsheets can be a database!)',
     hash: '#project/sda'
+  },
+  {
+    name: 'DocumentImportProcess',
+    blurb: 'C# .NET console application that transforms a directory of files into a .zip package for import into a document repository.',
+    hash: '#project/dip'
   },
 ];

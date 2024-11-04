@@ -30,18 +30,61 @@ export const Bio = () => {
       </p>
       
       <hr class="w-2/4 m-auto my-8" />
+        <h2>Some skills and tools in my kit...</h2>
 
-      <p>
-        //TODO: good list of skills that looks cool too
-        <h2>Some skills I've picked up along the way...</h2>
-        <ul>
-          <li>Vue.js</li>
-          <li>BULMA.css</li>
-          <li>Accessibile design</li>
-          <li>Responsive design</li>
-          <li>Design patterns <!-- (some of my favorite stuff, though I still get it wrong!) --></li>
-        </ul>
-      </p>
+        <article class="flex flex-wrap justify-center">
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>Vue.js</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>BULMA.css</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>.NET</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>Accessible design</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>Responsive design</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>Design patterns</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>git</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>Agile</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>APIs</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+          <div class="w-1/2 md:w-1/4 p-3 text-center">
+            <p>TDD (not as often as I should)</p>
+            <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
+          </div>
+
+        </article>
     </div>
   `;
 

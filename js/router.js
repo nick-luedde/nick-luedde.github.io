@@ -6,6 +6,7 @@ import { Asv } from "../components/projects/asv.js";
 import { AppsServerProject } from "../components/projects/appsserver.js";
 import { DIP } from "../components/projects/dip.js";
 import { Sda } from "../components/projects/sda.js";
+import { Ipt } from "../components/projects/ipt.js";
 
 const notFound = () => {
 
@@ -29,6 +30,7 @@ export const routes = (function() {
   map.set('#projects', Projects);
   map.set('#contact', Contact);
 
+  map.set('#project/ipt', Ipt);
   map.set('#project/asv', Asv);
   map.set('#project/appsserver', AppsServerProject);
   map.set('#project/dip', DIP);
