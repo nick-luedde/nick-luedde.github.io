@@ -1090,6 +1090,11 @@ video {
   border-bottom-left-radius: 0.75rem;
 }
 
+.rounded-t-xl {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
 .rounded-tl-xl {
   border-top-left-radius: 0.75rem;
 }
@@ -1654,5 +1659,9 @@ html {
 
   .md\:flex-wrap {
     flex-wrap: wrap;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 }

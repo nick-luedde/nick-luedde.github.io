@@ -14,7 +14,7 @@ export const Contact = () => {
         <figure class="inline-block">
           <img src="./assets/LI-In-Bug.png" alt="LinkedIn" class="w-auto h-8"/>
         </figure>
-        <a href="https://www.linkedin.com/in/nicholas-luedde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/nicholas-luedde" target="_blank" rel="noopener noreferrer" class="hover:underline focus:underline focus:text-sky-300 hover:text-sky-300">LinkedIn</a>
       </div>
       
       <p class="mt-20 mb-4 text-center text-3xl">
@@ -25,7 +25,7 @@ export const Contact = () => {
         <figure class="inline-block">
           <img src="./assets/github-mark-white.svg" alt="GitHub" class="w-auto h-8"/>
         </figure>
-        <a href="https://github.com/nick-luedde" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/nick-luedde" target="_blank" rel="noopener noreferrer" class="hover:underline focus:underline focus:text-sky-300 hover:text-sky-300">GitHub</a>
       </div>
     </div>
 

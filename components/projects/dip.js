@@ -18,7 +18,7 @@ export const DIP = () => {
 
     <div class="bg-black border rounded-xl border-white">
       <div class="flex">
-          <button id="reset" class="flex-1 bg-blue-600 text-white p-2">Reset</button>
+          <button id="reset" class="flex-1 rounded-t-xl bg-blue-600 text-white p-2">Reset</button>
       </div>
       <p class="break-all whitespace-pre-wrap p-3"><span id="entry"></span><span class="animate-pulse">|</span></p>
     </div>
