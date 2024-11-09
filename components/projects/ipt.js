@@ -10,7 +10,7 @@ export const Ipt = () => {
         Have had so much fun working on it, building new features and testing out new updates to the library of tools I'm using on it.
         <br>
         <br>
-        <a href="http://" target="_blank" rel="noopener noreferrer">It's worth a look at the source code.</a>
+        <a href="https://github.com/nick-luedde/ipt" target="_blank" rel="noopener noreferrer" class="text-sky-200 underline focus:text-sky-300 hover:text-sky-300">It's worth a look at the source code.</a>
       </p>
 
       <hr class="w-2/4 m-auto my-8" />
