@@ -1,18 +1,24 @@
 {
-  "include": ["app.js", "js/**/*", "pages/**/*", "components/**/*", "env.d.ts"],
-  "exclude": [],
   "compilerOptions": {
-    "checkJs": true,
-    "lib": ["ESNext", "DOM"],
-    "allowJs": true,
-    "composite": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
     "module": "ESNext",
-    "noEmit": true,
-    "strict": true,
-    "noImplicitThis": true,
-    "esModuleInterop": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": "."
-  }
+
+    /* Bundler mode */
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
 }

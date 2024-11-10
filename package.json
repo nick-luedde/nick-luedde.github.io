@@ -1,8 +1,14 @@
 {
+  "type": "module",
   "scripts": {
-    "tw": "npx tailwindcss -i ./css/style.css -o ./css/output.css --watch"
+    "tw": "npx tailwindcss -i ./css/style.css -o ./css/output.css --watch",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.11"
+    "tailwindcss": "^3.4.11",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10"
   }
 }
