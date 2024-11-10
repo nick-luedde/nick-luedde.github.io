@@ -11,7 +11,7 @@ export const Bio = () => {
       </p>
       
       <figure class="flex-none w-36 h-auto md:w-auto md:h-80">
-        <img class="border-2 border-white rounded-full h-auto md:w-auto md:h-80" src="./assets/headshot.jpg" alt="My headshot, I look great!"/>
+        <img class="border-2 border-white rounded-full h-auto md:w-auto md:h-80" src="./public/headshot.jpg" alt="My headshot, I look great!"/>
       </figure>
       
     </div>

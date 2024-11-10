@@ -921,6 +921,10 @@ video {
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .contents {
   display: contents;
 }
@@ -929,8 +933,16 @@ video {
   display: none;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-8 {
   height: 2rem;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-\[calc\(100vh-70px\)\] {
@@ -949,8 +961,16 @@ video {
   height: 100vh;
 }
 
+.w-1 {
+  width: 0.25rem;
+}
+
 .w-1\/2 {
   width: 50%;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .w-2\/4 {
@@ -1017,6 +1037,10 @@ video {
 
 .resize {
   resize: both;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
