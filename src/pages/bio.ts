@@ -1,4 +1,4 @@
-import { attach } from '../js/utils.js';
+import { attach } from '../js/utils';
 
 export const Bio = () => {
 
@@ -7,11 +7,11 @@ export const Bio = () => {
     <div id="pic" class="mt-6 flex flex-col-reverse md:flex-row items-center transition-opacity duration-1000 opacity-0">
       
       <p class="mt-2 md:m-0">
-        Hey, I'm Nick, and I'm a developer working with JavaScript, HTML, CSS, SQL, and some C# here and there.
+        Hey, I'm Nick, and I'm a developer working with JavaScript, TypeScript, HTML, CSS, SQL, and some C# here and there.
       </p>
       
       <figure class="flex-none w-36 h-auto md:w-auto md:h-80">
-        <img class="border-2 border-white rounded-full h-auto md:w-auto md:h-80" src="./public/headshot.jpg" alt="My headshot, I look great!"/>
+        <img class="border-2 border-white rounded-full h-auto md:w-auto md:h-80" src="./headshot.jpg" alt="My headshot, I look great!"/>
       </figure>
       
     </div>

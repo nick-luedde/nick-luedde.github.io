@@ -1,3 +1,5 @@
+type StringObject = { [key: string]: string };
+
 type ProjectCardDetail = {
   name: string;
   blurb: string;

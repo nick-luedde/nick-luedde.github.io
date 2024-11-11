@@ -1,4 +1,4 @@
-import { attach } from '../js/utils.js';
+import { attach } from '../js/utils';
 
 export const Contact = () => {
 
@@ -12,7 +12,7 @@ export const Contact = () => {
 
       <div class="flex items-center justify-center gap-2">
         <figure class="inline-block">
-          <img src="./assets/LI-In-Bug.png" alt="LinkedIn" class="w-auto h-8"/>
+          <img src="./LI-In-Bug.png" alt="LinkedIn" class="w-auto h-8"/>
         </figure>
         <a href="https://www.linkedin.com/in/nicholas-luedde" target="_blank" rel="noopener noreferrer" class="hover:underline focus:underline focus:text-sky-300 hover:text-sky-300">LinkedIn</a>
       </div>
@@ -23,7 +23,7 @@ export const Contact = () => {
       
       <div class="flex items-center justify-center gap-2">
         <figure class="inline-block">
-          <img src="./assets/github-mark-white.svg" alt="GitHub" class="w-auto h-8"/>
+          <img src="./github-mark-white.svg" alt="GitHub" class="w-auto h-8"/>
         </figure>
         <a href="https://github.com/nick-luedde" target="_blank" rel="noopener noreferrer" class="hover:underline focus:underline focus:text-sky-300 hover:text-sky-300">GitHub</a>
       </div>

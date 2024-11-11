@@ -1,4 +1,4 @@
-import { attach } from "../js/utils.js";
+import { attach } from "../js/utils";
 
 export const Header = () => {
 

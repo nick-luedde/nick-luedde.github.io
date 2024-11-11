@@ -1,4 +1,4 @@
-import { attach } from "../../js/utils.js";
+import { attach } from "../../js/utils";
 import AppsSchemaValidation from "../../js/AppsSchemaValidation.js";
 
 export const Asv = () => {

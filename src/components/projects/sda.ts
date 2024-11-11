@@ -1,5 +1,4 @@
-import { attach } from "../../js/utils.js";
-import AppsSchemaValidation from "../../js/AppsSchemaValidation.js";
+import { attach } from "../../js/utils";
 
 export const Sda = () => {
 

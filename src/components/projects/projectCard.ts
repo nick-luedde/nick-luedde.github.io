@@ -1,10 +1,6 @@
-import { navigate } from "../../js/router.js";
-import { attach } from "../../js/utils.js";
+import { attach } from "../../js/utils";
 
-/**
- * @param {{ detail: ProjectCardDetail }} props
- */
-export const ProjectCard = (props) => {
+export const ProjectCard = (props: { detail: ProjectCardDetail }) => {
 
   // const template = `
   //   <figure class="flex-none w-24">  

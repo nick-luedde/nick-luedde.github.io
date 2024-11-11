@@ -1,4 +1,4 @@
-import { attach } from "../../js/utils.js";
+import { attach } from "../../js/utils";
 
 export const Ipt = () => {
 
@@ -22,7 +22,7 @@ export const Ipt = () => {
     
     <section class="w-full h-[calc(100vh-70px)] px-2">
       <div class="border w-full h-full border-white">
-        <iframe class="w-full h-full" src="./components/projects/ipt.html"></iframe>
+        <iframe class="w-full h-full" src="./ipt.html"></iframe>
       <div>
     </section>
   `;

@@ -1,6 +1,6 @@
-import { attach } from '../js/utils.js';
-import { projects } from '../js/projectList.js';
-import { ProjectCard } from '../components/projects/projectCard.js';
+import { attach } from '../js/utils';
+import { projects } from '../js/projectList';
+import { ProjectCard } from '../components/projects/projectCard';
 
 export const Projects = () => {
 

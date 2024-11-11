@@ -1,5 +1,3 @@
-//@ts-check
-
 class ApiError extends Error {
   constructor(/** @type {String} */ message, { code = 400 } = {}) {
     super(message);

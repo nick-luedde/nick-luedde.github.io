@@ -1,5 +1,38 @@
-import { attach } from "../../js/utils.js";
+import { attach } from "../../js/utils";
 import AppsServer from "../../js/AppsServer.js";
+
+interface AppsRequest {
+  method: 'get' | 'post' | 'delete';
+  headers?: StringObject;
+  by?: string;
+  auth?: object;
+  rawRoute?: string;
+  route: string;
+  params?: StringObject;
+  body?: object | null
+};
+
+interface AppsResponse {
+  status: number;
+  type: string;
+  headers: StringObject;
+  body?: object | null;
+  toType: () => string | object | null | undefined | AppsResponse
+};
+
+interface AppsInternalResponse {
+  // Internal request structure....
+  res: AppsResponse;
+  locals?: object;
+  isSuccess: () => boolean;
+  send: (body: object) => AppsResponse;
+  render: ({ html, file }: { html: string, file: string }, props: object) => AppsResponse;
+  type: (ty: string) => AppsInternalResponse;
+  status: (code: number) => AppsInternalResponse;
+  headers: (hdrs: StringObject) => AppsInternalResponse
+};
+
+type AppsNextMw = (i?: number) => void;
 
 export const AppsServerProject = () => {
 
@@ -85,14 +118,14 @@ export const AppsServerProject = () => {
 
   const server = AppsServer.create();
 
-  server.use('/.*', (req, res, next) => {
+  server.use('/.*', (_req: AppsRequest, res: AppsInternalResponse, next: AppsNextMw) => {
     const start = Date.now();
     next();
     const end = Date.now();
-    res.headers({ 'app-response-time': end - start });
+    res.headers({ 'app-response-time': String(end - start) });
   });
 
-  server.get('/tasks', (req, res) => {
+  server.get('/tasks', (_req: AppsRequest, res: AppsInternalResponse) => {
     const tasks = [
       { id: 1, task: 'Build a sweet portfolio', done: false },
       { id: 2, task: 'Drink coffee', done: true },
@@ -101,7 +134,7 @@ export const AppsServerProject = () => {
     res.status(server.STATUS_CODE.SUCCESS).send(tasks);
   });
 
-  server.post('/task/save', (req, res) => {
+  server.post('/task/save', (req: AppsRequest, res: AppsInternalResponse) => {
     const task = req.body;
     console.log(task);
 

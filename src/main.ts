@@ -1,6 +1,7 @@
-import { listen, navigate } from "./js/router.js";
-import { Header } from "./components/header.js";
-import { Footer } from "./components/footer.js";
+import './css/output.css';
+import { listen, navigate } from "./js/router";
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
 
 listen();
 
