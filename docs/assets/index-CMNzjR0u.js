@@ -914,6 +914,9 @@ const Asv = () => {
     <p>
       Needed validation! Used this as an opportunity to write a bit of a validation tool from the ground up.
       Built it to work on the server and in the browser.
+        <br>
+        <br>
+        <a href="https://github.com/nick-luedde/asv" target="_blank" rel="noopener noreferrer" class="text-sky-200 underline focus:text-sky-300 hover:text-sky-300">Check out the source code</a>
     </p>
 
     <hr class="w-2/4 m-auto my-8" />
