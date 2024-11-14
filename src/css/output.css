@@ -897,6 +897,10 @@ video {
   margin-top: auto;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1091,6 +1095,10 @@ video {
 
 .whitespace-pre-wrap {
   white-space: pre-wrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .break-all {
@@ -1601,6 +1609,7 @@ video {
 html {
   display: grid;
   min-height: 100%;
+  color-scheme: dark;
   font-family: "Source Code Pro", system-ui;
 }
 

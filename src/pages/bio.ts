@@ -109,8 +109,7 @@ export const Bio = () => {
     }, 350);
   }
 
-  const render = () => {
-  };
+  const render = () => {};
 
   return {
     attach: attach(root),

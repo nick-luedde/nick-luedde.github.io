@@ -9,5 +9,6 @@
 html {
   display: grid;
   min-height: 100%;
+  color-scheme: dark;
   font-family: "Source Code Pro", system-ui;
 }

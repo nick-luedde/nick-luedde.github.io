@@ -1,4 +1,4 @@
-export const attach = (node: Element) => (el: string | Element) => {
+export const attach = (node: Element) => (el: Element | string) => {
   
   const to = typeof el === 'string'
     ? document.querySelector(`#${el}`)
