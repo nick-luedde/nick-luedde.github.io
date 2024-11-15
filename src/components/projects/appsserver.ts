@@ -41,8 +41,11 @@ export const AppsServerProject = () => {
     <p>
       Apps started getting bigger.
       Always liked how Express.js (and other libraries like it) apps looked and felt, and wanted to have a tool that let me do some similar things.
+      <br>
+      <br>
+      <a href="https://github.com/nick-luedde/appsserver" target="_blank" rel="noopener noreferrer" class="text-sky-200 underline focus:text-sky-300 hover:text-sky-300">Check out the source code</a>
     </p>
-
+    
     <hr class="w-2/4 m-auto my-8" />
 
     <p class="mb-2">
