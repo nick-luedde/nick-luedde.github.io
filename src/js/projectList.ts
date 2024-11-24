@@ -21,6 +21,11 @@ export const projects = [
     hash: '#project/sda'
   },
   {
+    name: 'AppTimerComponent',
+    blurb: 'Vue timer component that you can set up in any corner of the browser window. Kinda neat',
+    hash: '#project/apptimer'
+  },
+  {
     name: 'DocumentImportProcess',
     blurb: 'C# .NET console application that transforms a directory of files into a .zip package for import into a document repository.',
     hash: '#project/dip'

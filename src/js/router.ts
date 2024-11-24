@@ -4,6 +4,7 @@ import { Projects } from "../pages/projects";
 import { Contact } from "../pages/contact";
 import { Asv } from "../components/projects/asv";
 import { AppsServerProject } from "../components/projects/appsserver";
+import { Apptimer } from "../components/projects/timer";
 import { DIP } from "../components/projects/dip";
 import { Sda } from "../components/projects/sda";
 import { Ipt } from "../components/projects/ipt";
@@ -60,6 +61,7 @@ export const routes = (function() {
   map.set('#project/ipt', { menu: menus.projects, page: Ipt });
   map.set('#project/asv', { menu: menus.projects, page: Asv });
   map.set('#project/appsserver', { menu: menus.projects, page: AppsServerProject });
+  map.set('#project/apptimer', { menu: menus.projects, page: Apptimer });
   map.set('#project/dip', { menu: menus.projects, page: DIP });
   map.set('#project/sda', { menu: menus.projects, page: Sda });
 
