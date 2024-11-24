@@ -65,7 +65,7 @@
       background-color: var(--focus-highlight);
     }
 
-    .dark-theme[data-v-4f6db0f8] {
+    .dark-theme[data-v-a8d66487] {
       --red: red;
       --green: green;
       --dark: whitesmoke;
@@ -73,7 +73,7 @@
       --white: black;
     }
 
-    .light-theme[data-v-4f6db0f8] {
+    .light-theme[data-v-a8d66487] {
       --red: darkred;
       --green: darkgreen;
       --dark: #333333;
@@ -81,127 +81,127 @@
       --white: white;
     }
 
-    .colors[data-v-4f6db0f8] {
+    .colors[data-v-a8d66487] {
       background-color: whitesmoke;
     }
 
-    .time-block[data-v-4f6db0f8] {
+    .time-block[data-v-a8d66487] {
       padding-top: .75rem;
       padding-bottom: .75rem;
       padding-left: .25rem;
       padding-right: .25rem;
     }
 
-    .box[data-v-4f6db0f8] {
+    .box[data-v-a8d66487] {
       padding: 1.25rem;
     }
 
-    .text-green[data-v-4f6db0f8] {
+    .text-green[data-v-a8d66487] {
       color: green;
     }
 
-    .svg-green[data-v-4f6db0f8] {
+    .svg-green[data-v-a8d66487] {
       fill: green;
     }
 
-    .text-red[data-v-4f6db0f8] {
+    .text-red[data-v-a8d66487] {
       color: var(--red);
     }
 
-    .svg-red[data-v-4f6db0f8] {
+    .svg-red[data-v-a8d66487] {
       fill: var(--red);
     }
 
-    .text-dark[data-v-4f6db0f8] {
+    .text-dark[data-v-a8d66487] {
       color: var(--dark);
     }
 
-    .svg-dark[data-v-4f6db0f8] {
+    .svg-dark[data-v-a8d66487] {
       fill: var(--dark);
     }
 
-    .text-bold[data-v-4f6db0f8] {
+    .text-bold[data-v-a8d66487] {
       font-weight: bold;
     }
 
-    .btn[data-v-4f6db0f8] {
+    .btn[data-v-a8d66487] {
       background-color: var(--white);
       border: 1px solid var(--light);
     }
 
-    .btn-white[data-v-4f6db0f8] {
+    .btn-white[data-v-a8d66487] {
       border: 1px solid transparent;
     }
 
-    .bg-white[data-v-4f6db0f8] {
+    .bg-white[data-v-a8d66487] {
       background-color: var(--white);
     }
 
-    .corners[data-v-4f6db0f8] {
+    .corners[data-v-a8d66487] {
       border-radius: 6px;
     }
 
-    .p-sm[data-v-4f6db0f8] {
+    .p-sm[data-v-a8d66487] {
       padding: .25rem;
     }
 
-    .pb-sm[data-v-4f6db0f8] {
+    .pb-sm[data-v-a8d66487] {
       padding-bottom: .25rem;
     }
 
-    .p-md[data-v-4f6db0f8] {
+    .p-md[data-v-a8d66487] {
       padding: .75rem;
     }
 
-    .p-lg[data-v-4f6db0f8] {
+    .p-lg[data-v-a8d66487] {
       padding: 1.5rem;
     }
 
-    .mb-sm[data-v-4f6db0f8] {
+    .mb-sm[data-v-a8d66487] {
       margin-bottom: .25rem;
     }
 
-    .mb-md[data-v-4f6db0f8] {
+    .mb-md[data-v-a8d66487] {
       margin-bottom: .75rem;
     }
 
-    .light-border[data-v-4f6db0f8] {
+    .light-border[data-v-a8d66487] {
       border: 1px solid var(--light);
     }
 
-    .flex[data-v-4f6db0f8] {
+    .flex[data-v-a8d66487] {
       display: flex;
     }
 
-    .flex-nowrap[data-v-4f6db0f8] {
+    .flex-nowrap[data-v-a8d66487] {
       flex-wrap: nowrap;
     }
 
-    .flex-justify-center[data-v-4f6db0f8] {
+    .flex-justify-center[data-v-a8d66487] {
       justify-content: center;
     }
 
-    .flex-justify-between[data-v-4f6db0f8] {
+    .flex-justify-between[data-v-a8d66487] {
       justify-content: space-between;
     }
 
-    .flex-align-center[data-v-4f6db0f8] {
+    .flex-align-center[data-v-a8d66487] {
       align-items: center;
     }
 
-    .flex-grow-1[data-v-4f6db0f8] {
+    .flex-grow-1[data-v-a8d66487] {
       flex-grow: 1;
     }
 
-    .text-sm[data-v-4f6db0f8] {
+    .text-sm[data-v-a8d66487] {
       font-size: .75rem;
     }
 
-    .text-center[data-v-4f6db0f8] {
+    .text-center[data-v-a8d66487] {
       text-align: center;
     }
 
-    .action[data-v-4f6db0f8] {
+    .action[data-v-a8d66487] {
       cursor: pointer;
     }
 
@@ -234,6 +234,7 @@
 <body>
   <div id="app"></div>
 </body>
+
 
 <script>
   (function polyfill() {
@@ -6835,8 +6836,8 @@
       };
       const handlePause = (e) => {
         e.stopPropagation();
-        const { hr, min, sec, ms, totalms } = displayTime.value;
         timer.timer.pause();
+        const { hr, min, sec, ms, totalms } = displayTime.value;
         emit2("pause", { hr, min, sec, ms, totalms });
       };
       const handleStop = (e) => {
@@ -7010,7 +7011,7 @@
                 disabled: __props.disabled,
                 onClick: withModifiers(handleStart, ["prevent"])
               }, _cache[12] || (_cache[12] = [
-                createStaticVNode('<span class="flex flex-align-center" data-v-4f6db0f8><span class="icon" data-v-4f6db0f8><span aria-hidden="true" data-v-4f6db0f8><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-green" data-v-4f6db0f8><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" data-v-4f6db0f8></path></svg></span></span><span class="is-hidden-touch" data-v-4f6db0f8> Start </span></span>', 1)
+                createStaticVNode('<span class="flex flex-align-center" data-v-a8d66487><span class="icon" data-v-a8d66487><span aria-hidden="true" data-v-a8d66487><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-green" data-v-a8d66487><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" data-v-a8d66487></path></svg></span></span><span class="is-hidden-touch" data-v-a8d66487> Start </span></span>', 1)
               ]), 8, _hoisted_26),
               createBaseVNode("button", {
                 class: "btn btn-white",
@@ -7018,7 +7019,7 @@
                 disabled: __props.disabled,
                 onClick: withModifiers(handlePause, ["prevent"])
               }, _cache[13] || (_cache[13] = [
-                createStaticVNode('<span class="flex flex-align-center" data-v-4f6db0f8><span class="icon text-dark" data-v-4f6db0f8><span aria-hidden="true" data-v-4f6db0f8><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-dark" data-v-4f6db0f8><path d="M520-200v-560h240v560H520Zm-320 0v-560h240v560H200Zm400-80h80v-400h-80v400Zm-320 0h80v-400h-80v400Zm0-400v400-400Zm320 0v400-400Z" data-v-4f6db0f8></path></svg></span></span><span class="is-hidden-touch" data-v-4f6db0f8> Pause </span></span>', 1)
+                createStaticVNode('<span class="flex flex-align-center" data-v-a8d66487><span class="icon text-dark" data-v-a8d66487><span aria-hidden="true" data-v-a8d66487><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-dark" data-v-a8d66487><path d="M520-200v-560h240v560H520Zm-320 0v-560h240v560H200Zm400-80h80v-400h-80v400Zm-320 0h80v-400h-80v400Zm0-400v400-400Zm320 0v400-400Z" data-v-a8d66487></path></svg></span></span><span class="is-hidden-touch" data-v-a8d66487> Pause </span></span>', 1)
               ]), 8, _hoisted_27),
               createBaseVNode("button", {
                 class: "btn btn-white",
@@ -7026,7 +7027,7 @@
                 disabled: __props.disabled,
                 onClick: withModifiers(handleStop, ["prevent"])
               }, _cache[14] || (_cache[14] = [
-                createStaticVNode('<span class="flex flex-align-center" data-v-4f6db0f8><span class="icon text-red" data-v-4f6db0f8><span aria-hidden="true" data-v-4f6db0f8><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-red" data-v-4f6db0f8><path d="M320-640v320-320Zm-80 400v-480h480v480H240Zm80-80h320v-320H320v320Z" data-v-4f6db0f8></path></svg></span></span><span class="is-hidden-touch" data-v-4f6db0f8> Stop </span></span>', 1)
+                createStaticVNode('<span class="flex flex-align-center" data-v-a8d66487><span class="icon text-red" data-v-a8d66487><span aria-hidden="true" data-v-a8d66487><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-red" data-v-a8d66487><path d="M320-640v320-320Zm-80 400v-480h480v480H240Zm80-80h320v-320H320v320Z" data-v-a8d66487></path></svg></span></span><span class="is-hidden-touch" data-v-a8d66487> Stop </span></span>', 1)
               ]), 8, _hoisted_28)
             ])
           ], 4)) : createCommentVNode("", true)
@@ -7034,7 +7035,7 @@
       };
     }
   });
-  const AppTimer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-4f6db0f8"]]);
+  const AppTimer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-a8d66487"]]);
   const _hoisted_1 = { style: { "border": "1px solid gray", "padding": "1.5rem", "height": "100%", "border-radius": "6px", "box-shadow": "2px 2px 0 0", "overflow-y": "auto" } };
   const _hoisted_2 = { style: { "display": "flex" } };
   const _hoisted_3 = ["fill"];
