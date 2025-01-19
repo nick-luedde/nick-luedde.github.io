@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+* {
+  margin: 0;
+}
+
+html {
+  display: grid;
+  min-height: 100%;
+  color-scheme: dark;
+  font-family: "Source Code Pro", system-ui;
+}
