@@ -12,11 +12,13 @@
       HTML, CSS, SQL, and some C# here and there.
     </p>
 
-    <figure class="flex-none w-36 h-auto md:w-auto md:h-80">
+    
+    <figure class="relative flex-none w-36 h-auto md:w-auto md:h-80">
+      <!-- <div class="absolute -left-3 w-10 h-full bg-red-600 -rotate-3"></div> -->
       <img
-        class="border-2 border-white rounded-full h-auto md:w-auto md:h-80"
+        class="border-2 border-white h-auto md:w-auto md:h-80"
         src="./headshot.jpg"
-        alt="My headshot, I look great!"
+        alt="My headshot, I look great! :)"
       />
     </figure>
   </div>
@@ -81,7 +83,7 @@
       </div>
 
       <div class="w-1/2 md:w-1/4 p-3 text-center">
-        <p>APIs</p>
+        <p>API design</p>
         <p class="max-w-16 mt-1 m-auto border-b border-gray-600"></p>
       </div>
 
