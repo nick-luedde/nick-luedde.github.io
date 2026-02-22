@@ -9,7 +9,7 @@
   >
     <p class="mt-2 md:m-0">
       Hey, I'm Nick, and I'm a developer working with JavaScript, TypeScript,
-      HTML, CSS, SQL, and some C# here and there.
+      HTML, CSS, SQL, C# and some rust here and there.
     </p>
 
     
