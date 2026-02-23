@@ -9,7 +9,7 @@
     <span class="text-gray-200">{"{"}</span>
   </p>
   <p class="pl-4 my-2 border-l border-l-gray-600">
-    {description}
+    <span class="text-yellow-600 hover:text-yellow-400 transition-colors duration-200">"{description}"</span>
   </p>
   <span class="text-gray-200">{"}"}</span>
 </a>
