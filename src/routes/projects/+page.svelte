@@ -35,12 +35,6 @@
         "Vue timer component that you can set up in any corner of the browser window. Kinda neat",
       route: "/projects/apptimer" 
     },
-    {
-      name: "DocumentImportProcess",
-      blurb:
-        "C# .NET console application that transforms a directory of files into a .zip package for import into a document repository.",
-      route: "/projects/dip" 
-    },
   ];
 
   const delay = 150;

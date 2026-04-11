@@ -1,10 +1,3 @@
-class ApiError extends Error {
-  constructor(/** @type {String} */ message, { code = 400 } = {}) {
-    super(message);
-    this.code = code;
-  }
-}
-
 // quick polyfill for Google Apps Script Session object
 const Session = {
   getActiveUser() {
@@ -15,19 +8,17 @@ const Session = {
 };
 
 export default class AppsServer {
-
   /**
    * App server definition
    * Requests made successfully through a server object will always return a json response with a body prop
    *   - The body of the response will be either json type, or html type content
    * Requests that error will return a json response with an error prop
    *   - The error of the response will be an object with at minimum a message, but may also have a cause property
-   * @param {*} options 
+   * @param {AppsServerOptions} options
    */
   static create(options = {}) {
     //TODO: default options
     const debug = options.debug || false;
-
     const STATUS_CODE = {
       SUCCESS: 200,
       CREATED: 201,
@@ -37,7 +28,6 @@ export default class AppsServer {
       NOT_FOUND: 404,
       SERVER_ERROR: 500
     };
-
     const MIME_TYPES = {
       JSON: 'application/json',
       HTML: 'text/html',
@@ -45,12 +35,7 @@ export default class AppsServer {
       JS: 'js/object',
       RAW: 'data/raw'
     };
-
-    /**
-     * @param {String} route 
-     */
     const parseRouteWithParams = (route) => {
-      /** @type {StringObject} */
       const params = {};
       const [routestr, paramstr] = route.split('?');
       if (!paramstr)
@@ -58,27 +43,23 @@ export default class AppsServer {
           route: routestr,
           params
         };
-
       const elements = paramstr.split('&');
       elements.forEach(el => {
         const [prop, val] = el.split('=');
         params[decodeURIComponent(prop)] = decodeURIComponent(val);
       });
-
       return {
         route: routestr,
         params
       };
     };
-
     /**
      * Attempts to find and tokenize a matching route with named parames (ie. /home/user/:id)
      * @param {AppsRequest} req - request obj
-     * @param {AppsRoutes} method - route methods
+     * @param {AppsRoutes} method - route method
      */
     const findTokenRoute = (req, method) => {
       const tokenRoutes = Object.keys(method).filter(key => key.includes(':'));
-
       for (const route of tokenRoutes) {
         const tk = tokenizeRoute(route);
         if (tk.isMatch(req.route)) {
@@ -90,147 +71,91 @@ export default class AppsServer {
         }
       }
     };
-
     /**
      * Tokenizes a registered route so that it can be used to match a requested route
      * @param {string} route - registered route to tokenize for matching
      */
     const tokenizeRoute = (route) => {
-      const parts = route.split('/');
       // if theres a part that starts with ':' it means its a route param,
       // so that means we have to pick that part out of the actual route and get that as a param somehow...
       // So the regex could become => :param replace with [^/]* then matching...
       // and the param could remember where it came from (before and after uri, then match within...)
-
-      /** @type {Array<String[]>} */
-      const tokens = [];
-      parts.forEach((p, i) => {
-        if (p.startsWith(':')) {
-          tokens.push([parts[i - 1] || '', p, parts[i + 1] || '']);
-        }
+      const keys = [];
+      const regexStr = route.replace(/:([^/]+)/g, (_, key) => {
+        keys.push(key.replace(':', ''));
+        // replace ':param' with capture group
+        return '([^/]+)';
       });
-
-      // now we can match the route still...
-      const matcher = route.replace(/:[^/]*/g, '[^/]*');
-      const isMatch = (/** @type {String} */ sent) => new RegExp(matcher).test(sent);
-
+      const routeRegex = new RegExp(`^${regexStr}$`);
+      const isMatch = (sent) => routeRegex.test(sent);
       // and when we get a route, we can match the values
-      const paramsFromTokens = (/** @type {String} */sent) => {
-        /** @type {StringObject} */
+      const paramsFromTokens = (sent) => {
         const params = {};
-        tokens.forEach(t => {
-          const key = t[1].replace(':', '');
-          const before = t[0];
-          const after = t[2];
-
-          const [match] = (sent.match(`(?<=.*/${before !== undefined ? before : ''}/)([^/]*)(?=/?${after !== undefined ? after : ''}.*)`) || []);
-          params[key] = decodeURIComponent(match || '');
-        });
-
+        const match = sent.match(routeRegex);
+        if (match) {
+          keys.forEach((key, i) => {
+            // match[1] is the first capture group, match[2] the second, etc.
+            params[key] = decodeURIComponent(match[i + 1]);
+          });
+        }
         return params;
       };
-
       return { isMatch, paramsFromTokens };
-
     };
-
-    /**
-     * @param {String} pattern 
-     * @param {String} route 
-     */
     const matchRoute = (pattern, route) => new RegExp(pattern).test(route);
-
-    /** @type {AppsHandlerFunction[]} */
     const middleware = [];
-    /**
-     * @param {String} route 
-     * @param {AppsHandlerFunction} fn 
-     */
     const use = (route, fn) => {
-      /**
-       * @param {AppsRequest} req 
-       * @param {AppsInternalResponse} res 
-       * @param {AppsNextMw} next 
-       */
-      const mw = (req, res, next) => {
-        if (!matchRoute(route, req.route))
-          return next();
-
-        return fn(req, res, next);
-      }
+      const matcher = typeof route === 'function'
+        ? () => true
+        : (requested) => matchRoute(route, requested);
+      const mw = (req, res, next) => matcher(req.route)
+        ? fn(req, res, next)
+        : next();
       middleware.push(mw);
     };
-
-    /** @type {AppsErrorHandler[]} */
     const errors = [];
-    const error = (/** @type {AppsErrorHandler} */ fn) => errors.push(fn);
-
-    /** @type {AppsRoutes} */
+    const error = (fn) => errors.push(fn);
     const gets = {};
-    /**
-     * @param {String} route 
-     * @param  {...AppsHandlerFunction} fns 
-     */
     const get = (route, ...fns) => {
       gets[route] = fns;
     };
-
-    /** @type {AppsRoutes} */
     const posts = {};
-    /**
-     * @param {String} route 
-     * @param  {...AppsHandlerFunction} fns 
-     */
     const post = (route, ...fns) => {
       posts[route] = fns;
     };
-
-    /** @type {AppsRoutes} */
     const deletes = {};
-    /**
-     * @param {string} route 
-     * @param  {...AppsHandlerFunction} fns 
-     */
     const del = (route, ...fns) => {
       deletes[route] = fns;
     };
-  
     const methods = {
       get: gets,
       post: posts,
       delete: deletes
     };
-
     /**
      * Print routes
      */
     const inspect = () => {
       let details = 'AppsServer inspect:\n\n';
-
       details += 'GET ROUTES\n';
       details += '---------------------\n';
       details += Object.keys(gets).join('\n');
       details += '\n---------------------\n\n';
-
       details += 'POST ROUTES\n';
       details += '---------------------\n';
       details += Object.keys(posts).join('\n');
       details += '\n---------------------\n\n';
-
       details += 'DELETE ROUTES\n';
       details += '---------------------\n';
       details += Object.keys(deletes).join('\n');
       details += '\n---------------------\n\n';
-
       console.log(details);
       return details;
     };
-
     /**
      * Create new response obj
      */
     const response = () => {
-      /** @type {AppsResponse} */
       const res = {
         status: 999,
         headers: {},
@@ -239,64 +164,44 @@ export default class AppsServer {
         toType: () => {
           if (res.type === MIME_TYPES.JSON)
             return JSON.stringify(res);
-  
           if (res.type === MIME_TYPES.RAW)
             return res.body;
-  
           return res;
         }
       };
-
       const isSuccess = () => res.status >= 200 && res.status < 300;
-
-      /** @template T @param {T} body */
       const send = (body) => {
         res.body = body;
         return res;
       };
-
-      /**
-       * @param {object} content 
-       * @param {string} content.html 
-       * @param {string} content.file 
-       * @param {object} props 
-       */
       const render = ({ html, file }, props) => {
         const template = html
           ? HtmlService.createTemplate(html)
           : file
             ? HtmlService.createTemplateFromFile(file)
             : HtmlService.createTemplate('');
-
         template.props = props;
         const output = template.evaluate();
-
         res.status = STATUS_CODE.SUCCESS;
         res.type = MIME_TYPES.HTML;
         res.body = output;
-
         return res;
       };
-
-      const type = (/** @type {AppsMimeType} */ ty) => {
+      const type = (ty) => {
         res.type = ty;
         return api;
       };
-
-      const status = (/** @type {AppsStatusCode} */ code) => {
+      const status = (code) => {
         res.status = code;
         return api;
       };
-
-      const headers = (/** @type {StringObject} */ hdrs) => {
+      const headers = (hdrs) => {
         res.headers = {
           ...res.headers,
           ...hdrs
         };
         return api;
       };
-
-      /** @type {AppsInternalResponse} */
       const api = {
         locals: {},
         isSuccess,
@@ -307,15 +212,10 @@ export default class AppsServer {
         type,
         res
       };
-
       return api;
     };
-
     /**
      * Middleware stack composer
-     * @param {AppsRequest} req - request
-     * @param {AppsInternalResponse} res - response
-     * @param {AppsHandlerFunction[]} handlers - route handlers
      */
     const mwstack = (req, res, handlers) => {
       let index = 0;
@@ -323,184 +223,154 @@ export default class AppsServer {
         ...middleware,
         ...handlers
       ];
-
-      const nxt = (/** @type {Number | null} */ i) => {
+      const nxt = (i) => {
+        if (i <= index && index !== 0)
+          throw new ApiError('next() called multiple times in a row', { code: STATUS_CODE.SERVER_ERROR });
         index = i;
-
         let mw = all[index];
         if (!mw) {
           // If we have made it to the last element of the stack (which will be the route handler, it is undefined, return NOT_FOUND_RESPONSE)
           if (index === all.length)
-            return res.status(STATUS_CODE.NOT_FOUND).send({ message: `${req.route} not a valid route!` })
+            return res.status(STATUS_CODE.NOT_FOUND).send({ message: `${req.route} not a valid route!` });
           else
             throw new Error(`Something went wrong in the mw stack for index ${index}`);
         }
-
         return mw(req, res, nxt.bind(null, index + 1));
       };
-
       return nxt(0);
-    }
-
+    };
+    /**
+     * Eats error if cannot get active user
+     */
+    const quietGetUserEmail = () => {
+      try {
+        return Session.getActiveUser().getEmail();
+      }
+      catch {
+        return '';
+      }
+    };
     /**
      * Handles a request from the client
-     * @param {AppsRequest} req - request options
-     * @returns {AppsResponse} response 
      */
     const request = (req) => {
-
       try {
-        req.by = Session.getActiveUser().getEmail();
+        req.by = quietGetUserEmail();
         req.auth = {};
-
         req.params = req.params || {};
         req.rawRoute = req.route;
-
         const parsed = parseRouteWithParams(req.route);
         req.route = parsed.route;
         req.params = {
           ...req.params,
           ...parsed.params
         };
-
         const res = response();
-        /** @type {AppsRoutes} */
         const method = methods[String(req.method).toLowerCase()] || {};
-
         let handler = method[req.route];
         if (!handler)
           handler = findTokenRoute(req, method) || [];
-
         debug && console.time('mwstack');
         mwstack(req, res, handler);
         debug && console.timeEnd('mwstack');
-
         return res.res;
-      } catch (err) {
-        /** @type {AppsErrorLike} */
+      }
+      catch (err) {
         const error = err;
         const res = response();
         console.error(error);
-        console.error(error.stack);
-
+        if (error.stack)
+          console.error(error.stack);
         res.status(error.code || STATUS_CODE.SERVER_ERROR)
           .send({
             name: error.name,
             message: error.code ? error.message : 'Something went wrong!',
             stack: debug ? error.stack : undefined
           });
-    
         errors.forEach(handler => {
           try {
             handler(error, req);
-          } catch (inner) {
-            /** @type {AppsErrorLike} */
+          }
+          catch (inner) {
             const handlerError = inner;
             console.error(handlerError);
-            console.error(handlerError.stack);
-          } 
+            if (handlerError.stack)
+              console.error(handlerError.stack);
+          }
         });
-
         if (debug) {
           console.log('error-request', req);
           console.log('error-response', res);
         }
-
         return res.res;
       }
-
     };
-
     /**
      * Helper to handle client requests, call this from the top level "api" function in your app
      * @param {AppsRequest} req - request
      */
-    const handleClientRequest = (req = {}) => {
-      if (typeof req === 'string')
-        req = JSON.parse(req);
+    const handleClientRequest = (req) => {
+      const parsed = !req
+        ? {}
+        : typeof req === 'string'
+          ? JSON.parse(req)
+          : req;
       //ignore any additional props of the request so we know the request is clean when it comes in
-      const {
-        method,
-        headers,
-        route,
-        params,
-        body
-      } = req;
-
+      const { method, headers, route, params, body } = parsed;
       return request({
-        method,
+        method: method || 'get',
         headers,
-        route,
+        route: route || '',
         params,
         body
       }).toType();
     };
-
     /**
      * Helper to handle doGet request (just call this with your server obj in your doGet fn)
-     * @param {GoogleAppsScript.Events.DoGet} event - Google Apps Script Request object
      */
     const handleDoGet = (event = {}, { homeroute = '/' } = {}) => {
-      const pathInfo = event.pathInfo === undefined ? '' : event.pathInfo
+      const pathInfo = event.pathInfo === undefined ? '' : event.pathInfo;
       const path = String(pathInfo).toLowerCase();
-
       if (path.startsWith('api/')) {
         const response = handleClientRequest({
           method: 'get',
           route: path.slice(3),
           params: event.parameter
         });
-
         return ContentService
-          .createTextOutput(response)
+          .createTextOutput(String(response))
           .setMimeType(ContentService.MimeType.JSON);
       }
-
       const content = request({
         method: 'get',
         route: path !== '' ? `/${path}` : homeroute,
         params: event.parameter
       });
-
       return content.body;
     };
-
-    // /**
-    //  * Helper to handle doPost request (just call this with your server obj in your doPost fn)
-    //  * @param {GoogleAppsScript.Events.DoPost} event - Google Apps Script Request object
-    //  */
-    /** @type {AppsServer['handleDoPost']} */
+    /**
+     * Helper to handle doPost request (just call this with your server obj in your doPost fn)
+     */
     const handleDoPost = (event = {}) => {
-      const pathInfo = event.pathInfo === undefined ? '' : event.pathInfo
+      const pathInfo = event.pathInfo === undefined ? '' : event.pathInfo;
       const fullPath = String(pathInfo).toLowerCase();
       const path = fullPath.startsWith('api/')
         ? fullPath.slice(3)
         : `/${fullPath}`;
-
-      const {
-        method,
-        type = 'application/json'
-      } = event.parameter;
-
+      const { method, type = 'application/json' } = event.parameter;
       const body = type === 'application/json'
         ? JSON.parse(event.postData.contents)
         : event.postData.contents;
-
-      const req = {
-        method: method || 'post',
+      const response = handleClientRequest({
+        method: (method || 'post'),
         route: path,
-        type,
-        body
-      };
-
-      const response = handleClientRequest(req);
-
+        body,
+        params: event.parameter
+      });
       return ContentService
-        .createTextOutput(response)
+        .createTextOutput(String(response))
         .setMimeType(ContentService.MimeType.JSON);
     };
-
-    /** @type {AppsServer} */
     return {
       STATUS_CODE,
       MIME_TYPES,
@@ -516,5 +386,10 @@ export default class AppsServer {
       handleDoPost
     };
   }
-
+}
+class ApiError extends Error {
+  constructor(message, { code = 400 } = {}) {
+    super(message);
+    this.code = code;
+  }
 }
