@@ -111,9 +111,7 @@
         &nbsp;&nbsp; title: <span class="text-red-300">'Hey I'm valid!'</span>,
         <br />
 
-        &nbsp;&nbsp; tags: [
-        <span class="text-red-300">'awesome'</span>,
-        <span class="text-red-300">'rad'</span>],
+        &nbsp;&nbsp; tags: [<span class="text-red-300">'awesome'</span>, <span class="text-red-300">'rad'</span>],
         <br />
 
         &nbsp;&nbsp; rating: 10
