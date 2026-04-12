@@ -95,8 +95,8 @@
   };
 </script>
 
-<section in:fade class="container max-w-screen-lg m-auto pt-3">
-  <h1 class="text-green-400 text-xl mb-4">AppsServer</h1>
+<section in:fade class="container max-w-screen-lg m-auto pt-3 p-2">
+  <h1 class="text-sky-400 text-xl mb-4">AppsServer</h1>
   <p>
     Apps started getting bigger. Always liked how Express.js (and other
     libraries like it) apps looked and felt, and wanted to have a tool that let

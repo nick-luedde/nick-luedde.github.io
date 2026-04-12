@@ -7,19 +7,19 @@
   <ul class="flex">
     <li class="px-3">
       <a
-        class="text-lg text-gray-300 outline-none focus:text-sky-200 focus:underline hover:text-sky-200 hover:underline"
+        class="text-lg text-slate-50 outline-none focus:text-sky-400 focus:underline hover:text-sky-400 hover:underline"
         href="/">Bio</a
       >
     </li>
     <li class="px-3">
       <a
-        class="text-lg text-gray-300 outline-none focus:text-sky-200 focus:underline hover:text-sky-200 hover:underline"
+        class="text-lg text-slate-50 outline-none focus:text-sky-400 focus:underline hover:text-sky-400 hover:underline"
         href="/projects">Projects</a
       >
     </li>
     <li class="px-3">
       <a
-        class="text-lg text-gray-300 outline-none focus:text-sky-200 focus:underline hover:text-sky-200 hover:underline"
+        class="text-lg text-slate-50 outline-none focus:text-sky-400 focus:underline hover:text-sky-400 hover:underline"
         href="/contact">Contact</a
       >
     </li>
