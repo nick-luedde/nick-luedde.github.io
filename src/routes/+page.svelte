@@ -41,7 +41,7 @@
       <br />
 
       Whether im building C# desktop apps, Rust CLI tools, or full-stack
-      JavaScript/TypeScript web applications, I'm an engineer driven by logic,
+      JavaScript/TypeScript web applications, I'm a software engineer driven by logic,
       refined by data, and always looking for the next challenge to push my
       limits.
     </p>
