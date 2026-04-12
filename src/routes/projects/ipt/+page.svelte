@@ -7,7 +7,7 @@
     <h1 class="text-green-400 text-xl mb-4">ProjectsTrackingApp</h1>
     <p>
       This has been a great sandbox project for ideas. Started as a way to keep
-      track of daily tasks in a way that was better that docs and spreadsheets.
+      track of daily tasks in a way that was better than docs and spreadsheets.
       Have had so much fun working on it, building new features and testing out
       new updates to the library of tools I'm using on it.
       <br />
