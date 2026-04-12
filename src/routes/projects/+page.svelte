@@ -41,7 +41,7 @@
 
 </script>
 
-<section class="container max-w-screen-lg m-auto">
+<section class="container max-w-screen-lg m-auto p-2">
   <ul class="md:flex md:flex-wrap md:justify-center">
     {#each projects as project, i (project.name)}
       <li in:fade|global={{ delay: (i * delay) }} class="p-3 md:w-1/2 md:h-60">

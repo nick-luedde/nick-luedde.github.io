@@ -37,8 +37,8 @@
   };
 </script>
 
-<section in:fade class="container max-w-screen-lg m-auto">
-  <h1 class="text-green-400 text-xl mb-4">AppsSchemaValidation</h1>
+<section in:fade class="container max-w-screen-lg m-auto p-2">
+  <h1 class="text-sky-400 text-xl mb-4">AppsSchemaValidation</h1>
   <p>
     Needed validation! Used this as an opportunity to write a bit of a
     validation tool from the ground up. Built it to work on the server and in

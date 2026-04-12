@@ -2,8 +2,8 @@
     import { fade } from "svelte/transition";
 </script>
 
-<section in:fade class="container max-w-screen-lg m-auto">
-  <h1 class="text-green-400 text-xl mb-4">AppTimerComponent</h1>
+<section in:fade class="container max-w-screen-lg m-auto p-2">
+  <h1 class="text-sky-400 text-xl mb-4">AppTimerComponent</h1>
   <p>
     Cool set of Vue.js components. One lets you dock the element to any corner of the browser window. The other is a stopwatch/timer. Put them together and you've got timer overlay that you can keep around, but outta the way.
     <br>

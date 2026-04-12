@@ -2,8 +2,8 @@
   import { fade } from "svelte/transition";
 </script>
 
-<section in:fade class="container max-w-screen-lg m-auto">
-  <h1 class="text-green-400 text-xl mb-4">SheetDataAccess</h1>
+<section in:fade class="container max-w-screen-lg m-auto p-2">
+  <h1 class="text-sky-400 text-xl mb-4">SheetDataAccess</h1>
   <p>
     Working on the Google Apps Script platform, Google Sheets was a cheap, easy,
     and mostly effective choice as a backend data source for small apps. Wrote

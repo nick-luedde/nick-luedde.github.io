@@ -2,9 +2,9 @@
   import { fade } from "svelte/transition";
 </script>
 
-<section in:fade class="container max-w-screen-lg m-auto">
+<section in:fade class="container max-w-screen-lg m-auto p-2">
   <section class="container max-w-screen-lg m-auto">
-    <h1 class="text-green-400 text-xl mb-4">ProjectsTrackingApp</h1>
+    <h1 class="text-sky-400 text-xl mb-4">ProjectsTrackingApp</h1>
     <p>
       This has been a great sandbox project for ideas. Started as a way to keep
       track of daily tasks in a way that was better than docs and spreadsheets.
